@@ -1,0 +1,50 @@
+
+#email,
+#password,
+#newEmail,
+#newPassword,
+#updateSettings,
+#signOut,
+#delete {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 125px;
+  margin-bottom: 12px;
+}
+
+#updateSettings,
+#signOut,
+#delete {
+  width: 20px;
+}
+
+#settingsForm,
+#email,
+#password,
+#newEmail,
+#newPassword,
+#updateSettings,
+#signOut,
+#delete
+#expenseForm{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#settingsForm,
+#email,
+#password,
+#newEmail,
+#newPassword {
+  width: 275px;
+}
+
+#delete {
+  width: 200px;
+}
+
+#updateSettings,
+#signOut {
+  width: 150px;
+}

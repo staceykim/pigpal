@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<header>
+  <title>Pig Pal</title>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-webapp-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+
+
+  </script>
+  <script src="script.js"></script>
+</header>
+
+<body>
+
+  <!--Login-->
+  <div data-role="page" style='text-align:center;' id='login'>
+    <div data-role="content">
+      <img src='pigpallogo.jpg' alt='Pig Pal Logo'>
+      <h1>PigPal</h1>
+      <h2>budget your bacon</h2>
+      <form class="form" method="post" action="#" style='text-align:center;'>
+        <label>Username</label>
+        <br>
+        <input type="text" name="username" id="email">
+        <br>
+        <label>Password</label>
+        <br>
+        <input type="password" name="password" id="password">
+        <br>
+        <a href='#forgotpassword'>Forgot Password?</a>
+        <br>
+        <br>
+        <a href="#overview" data-role="button">LOGIN</a>
+        <br>
+        <br>
+        <a href="#register" data-role="button">CREATE NEW ACCOUNT</a>
+      </form>
+    </div>
+    <!-- /Login content -->
+  </div>
+  <!-- / Login page -->
+
+  <div data-role='page' style='text-align:center;' id='register'>
+    <div data-role='header'>
+      <a data-icon='back' data-rel='back' back-btn='true'>Back</a>
+      <!--Back button (needs back arrow without text)-->
+      <h1>Register</h1>
+    </div>
+    <!--/header-->
+    <div data-role='content' -->
+      <form>
+        <label for="emailregister">Email</label>
+        <input type="text" name="emailregister" id="emailregister">
+        <br>
+        <br>
+        <label for="usernameregister">Username</label>
+        <input type="text" name="usernameregister" id="usernameregister" value="">
+        <br>
+        <br>
+        <label for="passwordregister">Password</label>
+        <input type="password" id="test1" value="" />
+        <br>
+        <input id="test2" type="checkbox" />Show password
+      </form>
+      <script>
+        //script for show password
+        (function($) {
+          $.toggleShowPassword = function(options) {
+            var settings = $.extend({
+              field: "#password",
+              control: "#toggle_show_password",
+            }, options);
+
+            var control = $(settings.control);
+            var field = $(settings.field)
+
+            control.bind('click', function() {
+              if (control.is(':checked')) {
+                field.attr('type', 'text');
+              } else {
+                field.attr('type', 'password');
+              }
+            })
+          };
+        }(jQuery));
+
+        $.toggleShowPassword({
+          field: '#test1',
+          control: '#test2'
+        });
+
+      </script>
+      <a href="#getStarted" data-role="button">NEXT</a>
+      <!--next button-->
+    </div>
+    <!--/Register content-->
+  </div>
+  <!--/Register page-->
+
+  <div data-role='page' id='getStarted' style='text-align:center;'>
+    <div data-role='header'>
+      <a data-icon='back' data-rel='back' back-btn='true'>Back</a>
+      <!--Back button (needs back arrow without text)-->
+      <h1>Get Started</h1>
+    </div>
+    <div data-role='content'>
+      <h2>NAME YOUR PIG</h2>
+      <img src='piglogo.jpg' alt='Pig Logo'>
+      <br>
+      <br>
+      <input type='text' id='enterName' value='Enter Name'>
+      <br>
+      <br>
+      <a href='#startingBudget' data-role='button'>Start Budgeting</a>
+    </div>
+  </div>
+  <!--/Get Started page-->
+
+  <div data-role='page' id='totalSpending' style='text-align:center;'>
+    <div data-role='header'>
+      <!--Insert hamburger icon here-->
+      <h1>Total Spending</h1>
+    </div>
+    <div data-role='content'>
+      <label for="select-choice-month">Month</label>
+      <select name="select-choice-month" id="select-choice-month">
+        <option>July</option>
+        <option value="jan">January</option>
+        <option value="feb">February</option>
+        <option value="march">March</option>
+        <option value="april">April</option>
+        <option value="may">May</option>
+        <option value="june">June</option>
+        <option value="july">July</option>
+        <option value="aug">August</option>
+        <option value="sep">September</option>
+        <option value="oct">October</option>
+        <option value="nov">November</option>
+        <option value="dec">December</option>
+      </select>
+      <label for="select-choice-year">Year</label>
+      <select name="select-choice-year" id="select-choice-year">
+        <option>2016</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+      </select>
+      <!--Insert pie chart. Possible link: http://www.elated.com/articles/snazzy-animated-pie-chart-html5-jquery/ -->
+      <h2>Categories</h2>
+    </div>
+  </div>
+  <!--/Total Spending page-->
+
+  <div data-role='page' id='badges' style='text-align:center;'>
+    <div data-role='header'>
+      <!--insert Hamburger icon-->
+      <h1>Badges</h1>
+    </div>
+    <div data-role='content'>
+      <!--insert images, and maybe pop up of brief description-->
+    </div>
+  </div>
+  <!--/Badges Page-->
+
+  <div data-role='page' id='newGoal' style='text-align:center;'>
+    <div data-role='header'>
+      <a data-icon='back' data-rel='back' back-btn='true'>Back</a>
+      <!--Back button (needs back arrow without text)-->
+      <h1>New Goal</h1>
+    </div>
+    <div data-role='content'>
+      <label for="savingsname">What are you saving for?</label>
+      <br>
+      <input type="text" name="savingsname" id="savingsname" value='Name'>
+      <br>
+      <br>
+      <label for='goalCost'>Total Goal Cost</label>
+      <form action="">
+        $
+        <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+        <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
+      </form>
+      <br>
+      <!--Calendar should show up from jQuery-->
+      <label for='datepicker'>Deadline for Goal</label>
+      <input data-role="date" data-inline="true" type="text" value='00/00/0000'>
+      <label for="nonecheckbox">or</label>
+      <input type="checkbox" name="nonecheckbox" id="nonecheckbox">
+      <label for="nonecheckbox">None</label>
+      <p>Do you already have money saved towards your goal?</p>
+      <input type="radio" name="savedmoneyradio" id="savedmoneyradio">
+      <label for="savedmoneyradio">Yes</label>
+      <input type="radio" name="savedmoneyradio" id="savedmoneyradio">
+      <label for="savedmoneyradio">No</label>
+      <br>
+      <br>
+      <a href='#' data-role='button'>All Done!</a>
+      <!--Where should this button lead to?-->
+    </div>
+    <!--/New Goal content-->
+  </div>
+  <!--/New Goal page-->
+
+  <!--Starting Budget Page-->
+  <div data-role="page" id="startingBudget" style='text-align:center;'>
+    <div data-role="content">
+      <h1>Starting Budget</h1>
+      <p>Amount in Bank:</p>
+      <form action="">
+        $
+        <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+        <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
+      </form>
+      <h2>Income Sources</h2>
+      <form id="incomeSource" action="">
+        <input type="text" placeholder="Enter Name" style='width:100px;' /> $
+        <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+        <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
+        <select>
+          <option value="daily">Choose Frequency</option>
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="anually">Anually</option>
+        </select>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">Plus Icon</a>
+      </form>
+
+      <h2>Recurring Expense</h2>
+      <form id="recurringExpense" action="">
+        <input type="text" placeholder="Enter Name" style='width:100px;' /> $
+        <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+        <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
+        <select>
+          <option disabled selected value="daily">Choose Frequency</option>
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="anually">Anually</option>
+        </select>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">Plus Icon</a>
+      </form>
+      <input type="submit" value="Submit">
+    </div>
+  </div>
+
+  <!--Overview-->
+  <div data-role="page" id="overview">
+    <div data-role="content">...</div>
+  </div>
+
+  <!--Settings-->
+  <div data-role="page" id="settings" style='text-align:center;'>
+    <div data-role="content">
+      <h1>Settings</h1>
+
+      <form id="settingsForm" style="margin-left: 75px;">
+        <input id="email" type="text" placeholder="Email">
+        <input id="password" type="text" placeholder="Password">
+        <input id="newEmail" type="text" placeholder="New Email">
+        <input id="newPassword" type="text" placeholder="New Password">
+        <input id="updateSettings" type="submit" value="Update Settings" />
+        <input id="signOut" type="button" value="Sign Out" />
+        <input id="delete" type="button" value="DELETE ACCOUNT" />
+      </form>
+    </div>
+    <div/>
+  </div>
+
+  <!--New Expense-->
+  <div data-role="page" id="newExpense">
+    <div data-role="content">
+      <h1>New Expense</h1>
+      <form id="expenseForm">
+       <input id="expenseName" type="text" placeholder="Expense Name">
+      </form>
+         <p>Amount:</p> $
+           <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+            <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
+
+    </div>
+  </div>
+
+</body>
+</html>
