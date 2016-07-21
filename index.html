@@ -484,7 +484,7 @@
   	<div  data-role="footer"></div>
    </div>
 
-  <!--Overview-->
+<!--Overview-->
   <div data-role="page" id="overview" data-theme="a" style="text-align:center;">
 
 	  <div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
@@ -504,11 +504,40 @@
 				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
 			</ul>
 		</div>
+		
 		<div data-role="content">
-			<h3>This is the content</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam [...].</p>
-		</div>
+			<div id="pigOverview" style="border:1px solid black;">
+				<div id="pigImage" style="float:left;">
+					<img src="wilbur.png">
+					<p>Wilbur</p>
+				</div>
+				
+				<div id="happinessBar" style="float:right;">
+					<p>Happiness bar</p>
+					<style>
+						#myProgress {
+						  position: relative;
+						  width: 100%;
+						  height: 30px;
+						  background-color: #ddd;
+						}
+
+						#myBar {
+						  position: absolute;
+						  width: 50%;
+						  height: 100%;
+						  background-color: #ffcc00;
+						}
+					</style>
+					<div id="myProgress">
+						<div id="myBar"></div>
+					</div>
+					<img src="dailytip.png">
+				</div>	
+			</div>
+		</div>		
+		
+		<div id="budgetOverview" style="border:1px solid black;"></div>
   </div>
 
 <!--Settings-->
