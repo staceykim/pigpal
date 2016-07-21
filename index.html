@@ -111,153 +111,247 @@
   </div>
   <!--/Get Started page-->
 
-  <div data-role='page' id='totalSpending' style='text-align:center;'>
-    
-	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
-			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
-            <span class="title"><h2>Total Spending</h2></span>
-		</div>
-	  
-	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
-			<ul>
-				<li><h3>Charlotte<h3></li>
-				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
-				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
-				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
-				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
-				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
-				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
-				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
-			</ul>
-		</div>
-	
-    <div data-role='content'>
-      <label for="select-choice-month">Month</label>
-      <select name="select-choice-month" id="select-choice-month">
-        <option>July</option>
-        <option value="jan">January</option>
-        <option value="feb">February</option>
-        <option value="march">March</option>
-        <option value="april">April</option>
-        <option value="may">May</option>
-        <option value="june">June</option>
-        <option value="july">July</option>
-        <option value="aug">August</option>
-        <option value="sep">September</option>
-        <option value="oct">October</option>
-        <option value="nov">November</option>
-        <option value="dec">December</option>
-      </select>
-      <label for="select-choice-year">Year</label>
-      <select name="select-choice-year" id="select-choice-year">
-        <option>2016</option>
-        <option value="2012">2012</option>
-        <option value="2013">2013</option>
-        <option value="2014">2014</option>
-        <option value="2015">2015</option>
-        <option value="2016">2016</option>
-      </select>
-      <!--Insert pie chart. Possible link: http://www.elated.com/articles/snazzy-animated-pie-chart-html5-jquery/ -->
+	<!--Total Spending Page starts here-->
+	  <div data-role='page' id='totalSpending' style='text-align:center;'>
+	    <div data-role='header'>
+	      <!--Insert hamburger icon here-->
+	      <h1>Total Spending</h1>
+	    </div>
+	    <div data-role='content'>
+	      <label for="select-choice-month">Month</label>
+	      <select name="select-choice-month" id="select-choice-month">
+	        <option>July</option>
+	        <option value="jan">January</option>
+	        <option value="feb">February</option>
+	        <option value="march">March</option>
+	        <option value="april">April</option>
+	        <option value="may">May</option>
+	        <option value="june">June</option>
+	        <option value="july">July</option>
+	        <option value="aug">August</option>
+	        <option value="sep">September</option>
+	        <option value="oct">October</option>
+	        <option value="nov">November</option>
+	        <option value="dec">December</option>
+	      </select>
+	      <label for="select-choice-year">Year</label>
+	      <select name="select-choice-year" id="select-choice-year">
+	        <option>2016</option>
+	        <option value="2012">2012</option>
+	        <option value="2013">2013</option>
+	        <option value="2014">2014</option>
+	        <option value="2015">2015</option>
+	        <option value="2016">2016</option>
+	      </select>
+	      <!--Script for Pie Chart-->
+	      <script type="text/javascript">
+	        google.charts.load('current', {'packages':['corechart']});
+	        google.charts.setOnLoadCallback(drawChart);
+	        function drawChart() {
 
-  <script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
+	          var data = google.visualization.arrayToDataTable([
+	            ['Category', 'Total Spending'],
+	            ['Housing', 500],
+	            ['Textbooks', 170],
+	            ['Transportation', 50],
+	            ['Food', 100],
+	            ['Textbooks', 250]
+	          ]);
 
-      var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Work',     11],
-        ['Eat',      2],
-        ['Commute',  2],
-        ['Watch TV', 2],
-        ['Sleep',    7]
-      ]);
+	          var options = {
+	            title: 'My Categories (in dollars)',
+	            legend:{position: 'bottom'},
+	            chartArea:{left:6,top:6,width:"70px",height:"100px"}
+	          };
 
-      var options = {
-        title: 'My Daily Activities'
-      };
+	          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+	          chart.draw(data, options);
+	        }
+	      </script>
+	      <!--Script for Pie Chart ends here-->
 
-      chart.draw(data, options);
-    }
-  </script>
+	  <div id="piechart" style="width: 450px; height: 400px;"></div>
+	    </div>
+	  </div>
+	  <!--/Total Spending page-->
 
+		<!--Savings Goals-->
+			<div data-role='page' id='savingsGoals'>
+				<div data-role='header'>
+					<!--insert Hamburger icon-->
+					<h1>Savings Goals</h1>
+				</div> <!--end of header-->
+				<div data-role='content'>
+					<div id="progressbar"></div>
+					<script>
+		$( function() {
+			$( "#progressbar" ).progressbar({
+				value: 37
+			});
+		} );
+		</script>
+				</div> <!--end Savings Goal content-->
+			</div> <!--end savings goal page-->
+		<!--/Savings Goals-->
 
-  <div id="piechart" style="width: 900px; height: 500px;"></div>
+		<!--Badges Page begins here-->
+	    <div data-role='page' id='badges' style='text-align:center;'>
+	      <div data-role='header'>
+	        <!--insert Hamburger icon-->
+	        <h1>Badges</h1>
+	      </div>
+	      <div data-role='content'>
+	        <!--frugal fun-->
+	        <a href="#frugalfun" data-rel="popup"><img src='badges/star.png' width='90px'></a>
+	        <div data-role="popup" id="frugalfun">
+	  	      <p>Frugal Fun</p>
+	        </div>
+	        <!--startersaver-->
+	        <a href="#startersaver" data-rel="popup"><img src='badges/starter spender.png' width='90px'></a>
+	        <div data-role="popup" id="startersaver">
+	  	      <p>Starter Spender</p>
+	        </div>
+	        <!--weekly streak-->
+	        <a href="#weeklystreak" data-rel="popup"><img src='badges/medal.png' width='90px'></a>
+	        <div data-role="popup" id="weeklystreak">
+	  	      <p>Weekly Streak!</p>
+	        </div>
+	        <!--2 week streak-->
+	        <a href="#2weekstreak" data-rel="popup"><img src='badges/2 month streak.png' width='90px'></a>
+	        <div data-role="popup" id="2weekstreak">
+	  	      <p>2 Week Streak!</p>
+	        </div>
+	        <!--big budgeter-->
+	        <a href="#bigbudgeter" data-rel="popup"><img src='badges/moneybag.png' width='90px'></a>
+	        <div data-role="popup" id="bigbudgeter">
+	  	      <p>Big Budgeter</p>
+	        </div>
+	        <!--money mogul-->
+	        <a href="#moneymogul" data-rel="popup"><img src='badges/trophy.png' width='90px'></a>
+	        <div data-role="popup" id="moneymogul">
+	  	      <p>Money Mogul</p>
+	        </div>
+	        <!--cash king-->
+	        <a href="#cashking" data-rel="popup"><img src='badges/cashking.png' width='90px'></a>
+	        <div data-role="popup" id="cashking">
+	  	      <p>Cash King</p>
+	        </div>
+	        <!--piggy banker-->
+	        <a href="#piggybanker" data-rel="popup"><img src='badges/money mogul.png' width='90px'></a>
+	        <div data-role="popup" id="piggybanker">
+	  	      <p>Piggy Banker</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	        <!--locked-->
+	        <a href="#locked" data-rel="popup"><img src='badges/lock.png' width='90px'></a>
+	        <div data-role="popup" id="locked">
+	          <p>Locked</p>
+	        </div>
+	      </div> <!--end content for Badges-->
+	    </div>
+	    <!--/Badges Page-->
 
-      <h2>Categories</h2>
-    </div>
-  </div>
-  <!--/Total Spending page-->
-
-  <div data-role='page' id='badges' style='text-align:center;'>
-    
-	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
-			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
-            <span class="title"><h2>Badges</h2></span>
-		</div>
-	  
-	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
-			<ul>
-				<li><h3>Charlotte<h3></li>
-				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
-				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
-				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
-				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
-				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
-				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
-				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
-			</ul>
-		</div>
-	
-    <div data-role='content'>
-      <!--insert images, and maybe pop up of brief description-->
-    </div>
-  </div>
-  <!--/Badges Page-->
-
-  <div data-role='page' id='newGoal' style='text-align:center;'>
-    <div data-role='header'>
-      <a data-icon='back' data-rel='back' back-btn='true'>Back</a>
-      <!--Back button (needs back arrow without text)-->
-      <h1>New Goal</h1>
-    </div>
-    <div data-role='content'>
-      <label for="savingsname">What are you saving for?</label>
-      <br>
-      <input type="text" name="savingsname" id="savingsname" value='Name'>
-      <br>
-      <br>
-      <label for='goalCost'>Total Goal Cost</label>
-      <form action="">
-        $
-        <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
-        <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
-      </form>
-      <br>
-      <!--Calendar should show up from jQuery-->
-      <label for='datepicker'>Deadline for Goal</label>
-      <input data-role="date" data-inline="true" type="text" value='00/00/0000'>
-      <label for="nonecheckbox">or</label>
-      <input type="checkbox" name="nonecheckbox" id="nonecheckbox">
-      <label for="nonecheckbox">None</label>
-      <p>Do you already have money saved towards your goal?</p>
-      <input type="radio" name="savedmoneyradio" id="savedmoneyradio">
-      <label for="savedmoneyradio">Yes</label>
-      <input type="radio" name="savedmoneyradio" id="savedmoneyradio">
-      <label for="savedmoneyradio">No</label>
-      <br>
-      <br>
-      <a href='#' data-role='button'>All Done!</a>
-      <!--Where should this button lead to?-->
-    </div>
-    <!--/New Goal content-->
-  </div>
-  <!--/New Goal page-->
+			<!--New Goals-->
+				<div data-role='page' id='newGoal' style='text-align:center;'>
+					<div data-role='header'>
+						<a data-icon='back' data-rel='back' back-btn='true'>Back</a>
+						<!--Back button (needs back arrow without text)-->
+						<h1>New Goal</h1>
+					</div>
+					<div data-role='content'>
+						<label for="savingsname">What are you saving for?</label>
+						<input type="text" name="savingsname" id="savingsname" placeholder='Name'>
+						<br>
+						<br>
+						<label for='goalCost'>Total Goal Cost</label>
+						<form action="">
+							$
+							<input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+							<input type="number" name="quantity" min="0" max="99" style='width:33px;' />
+						</form>
+						<br>
+						<!--Calendar should show up from jQuery-->
+						<label for='datepicker'>Deadline for Goal</label>
+						<input data-role="date" data-inline="true" type="text" placeholder='00/00/0000'>
+						<p>or</p>
+						<input type="checkbox" name="nonecheckbox" id="nonecheckbox">
+						<label for="nonecheckbox">None</label>
+						<p>Do you already have money saved towards your goal?</p>
+						<label>
+							<input name='radiochoice' id='yesradiochoice' type='radio'>Yes
+						</label>
+						<label for = 'noradiochoice'>No</label>
+						<input name='radiochoice' id='noradiochoice' class='custom' type='radio'>
+						<br>
+						<a href='#savingsGoals' data-role='button'>All Done!</a>
+						<!--Where should this button lead to?-->
+					</div>
+					<!--/New Goal content-->
+				</div>
+				<!--/New Goal page-->
 
   <!--Starting Budget Page-->
-  <div data-role="page" id="startingBudget" style='text-align:center;'> 
+  <div data-role="page" id="startingBudget" style='text-align:center;'>
     <div data-role="content">
       <h1>Starting Budget</h1>
       <p>Amount in Bank:</p>
@@ -295,18 +389,18 @@
         </select>
         <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">Plus Icon</a>
       </form>
-      <input type="submit" value="Submit">
+      <a href='#overview' data-role='button'>Submit</a>
     </div>
   </div>
-  
+
     <!--Pig Page-->
   <div  data-role="page" id="pig" style='text-align:center;'>
-  	
+
 	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
 			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
             <span class="title"><h2>Wilbur</h2></span>
 		</div>
-	  
+
 	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
 			<ul>
 				<li><h3>Charlotte<h3></li>
@@ -319,20 +413,20 @@
 				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
 			</ul>
 		</div>
-	
+
   	<div  data-role="content">
 		<h3>Pig Page</h3>
 	</div>
   	<div  data-role="footer"></div>
    </div>
-   
+
   <!--Budget Page-->
   <div  data-role="page" id="budget" style='text-align:center;'>
   	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
 			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
             <span class="title"><h2>Budget</h2></span>
 		</div>
-	  
+
 	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
 			<ul>
 				<li><h3>Charlotte<h3></li>
@@ -358,7 +452,7 @@
 			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
             <span class="title"><h2>Overview</h2></span>
 		</div>
-	  
+
 	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
 			<ul>
 				<li><h3>Charlotte<h3></li>
@@ -380,12 +474,12 @@
 
   <!--Settings-->
   <div data-role="page" id="settings" style='text-align:center;'>
-  
+
   <div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
 			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
             <span class="title"><h2>Settings</h2></span>
 		</div>
-	  
+
 	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
 			<ul>
 				<li><h3>Charlotte<h3></li>
@@ -398,7 +492,7 @@
 				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
 			</ul>
 		</div>
-  
+
     <div data-role="content">
       <form id="settingsForm" style="margin-left: 75px;">
         <input id="email" type="text" placeholder="Email">
