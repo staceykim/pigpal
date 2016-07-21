@@ -50,10 +50,12 @@
         <label for="emailregister">Email</label>
         <input type="text" name="emailregister" id="emailregister">
         <label for="usernameregister">Username</label>
+				<div id='passwordreg'>
         <input type="text" name="usernameregister" id="usernameregister" value="">
         <label for="passwordregister">Password</label>
-        <input type="password" id="passwordinput" value=""/>
-        <input id="test2" type="checkbox" />Show password
+        <input type="password" id="passwordinput" value="" style='width:160px;'/>
+        <br><input id="test2" type="checkbox"/>Show password
+			</div>
       </form>
       <script>
         //script for show password
@@ -488,7 +490,7 @@
 	</div>
   	<div  data-role="footer"></div>
    </div>
-   
+
     <!--New Expense-->
   <div data-role="page" id="newExpense">
     <div data-role="content">
@@ -523,14 +525,14 @@
 				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
 			</ul>
 		</div>
-		
+
 		<div data-role="content">
 			<div id="pigBudget" style="border:1px solid black;">
 				<div id="pigImage" style="float:left;" >
 					<img src="wilbur.png">
 					<p>Wilbur</p>
 				</div>
-				
+
 				<div id="happinessBar" style="float:right;" >
 					<p>Happiness bar</p>
 					<style>
@@ -591,12 +593,12 @@
 			<div id="myProgressBudget">
 				<div id="myBarBudget"></div>
 			</div>
-		</div>	
-		
+		</div>
+
 		<div style="float: left;"><a href="#newExpense"><img style="width: 100px; height: 100px;" src="addexpenses.png"></a></div>
 		<div style="float: right;"><a href="#newGoal"><img style="width: 100px; height: 100px;" src="newsavings.png"></a></div>
-		
-		</div>		
+
+		</div>
   </div>
 
 <!--Settings-->
