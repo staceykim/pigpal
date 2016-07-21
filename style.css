@@ -1,9 +1,21 @@
+
+body, form, p{
+  font-family: 'Gentium Book Basic', serif;
+}
+
+h1{ /*"PigPal font on top of website"*/
+  font-size:100px;
+  font-family:'Galada', cursive;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
 .open a, .open a:hover {
   padding: 7px 15px;
   background-color: #000;
   border-radius: 3px;
 }
-.open { 
+.open {
   color: #fff;
   position: absolute;
 }
@@ -57,24 +69,24 @@
   text-align: center;
   font-size: 18px;
 }
-.panel.left .overviewNav a:before { 
+.panel.left .overviewNav a:before {
   content: url("home.png");
 }
-.panel.left .pigNameNav a:before { 
+.panel.left .pigNameNav a:before {
   content: url("pig.png");
 }
-.panel.left .budgetNav a:before { 
+.panel.left .budgetNav a:before {
   content: url("money.png");
 }
-.panel.left .totalSpendingNav a:before { 
+.panel.left .totalSpendingNav a:before {
   content: url("chart.png");
 }
-.panel.left .savingsGoalNav a:before { 
+.panel.left .savingsGoalNav a:before {
   content: url("dollar.png");
 }
-.panel.left .badgesNav a:before { 
+.panel.left .badgesNav a:before {
   content: url("badges.png");
 }
-.panel.left .settingsNav a:before { 
+.panel.left .settingsNav a:before {
   content: url("settings.png");
 }
