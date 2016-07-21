@@ -8,32 +8,30 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="script.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!--for pie chart-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!--for pie chart-->
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Open+Sans|Galada|Source+Sans+Pro" rel="stylesheet">
+	<!--theme roller-->
+	<link rel="stylesheet" href="themes/pigpaltheme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 </header>
 
 <body>
   <!--Login-->
   <div data-role="page" style='text-align:center;' id='login'>
     <div data-role="content">
-      <img src='pigpallogo.jpg' alt='Pig Pal Logo'>
+      <img src='piglogo.gif' alt='Pig Pal Logo'>
       <h1 style='font-size:50px;' >PigPal</h1>
-      <h2 style='font-size:16px;'>budget your bacon</h2>
+      <h2 style='font-size:16px;color: gray;font-style:italic;font-family: 'Gentium Book Basic', serif'>budget your bacon</h2>
       <form class="form" method="post" action="#" style='text-align:center;'>
-        <label>Username</label>
-        <input type="text" name="username" id="email">
-        <label>Password</label>
-        <input type="password" name="password" id="password">
-        <br>
+        <input type="text" name="username" id="email" placeholder='Username'>
+        <input type="password" name="password" id="password" placeholder='Password'>
         <a href='#forgotpassword'>Forgot Password?</a>
         <br>
-        <br>
-        <a href="#overview" data-role="button">LOGIN</a>
-        <br>
-        <br>
-        <a href="#register" data-role="button">CREATE NEW ACCOUNT</a>
+        <a href="#overview" data-role="button" style='width:160px; height:10px; margin-bottom:10px;margin-left:39px;'>LOGIN</a>
+        <a href="#register" data-role="button" style='width:160px; height:10px; margin-left:39px;'>NEW USER</a>
       </form>
     </div>
     <!-- /Login content -->
@@ -100,7 +98,7 @@
     </div>
     <div data-role='content'>
       <h2>NAME YOUR PIG</h2>
-      <img src='piglogo.jpg' alt='Pig Logo'>
+      <img src='piglogo.gif' alt='Pig Logo'>
       <br>
       <br>
       <input type='text' id='enterName' value='Enter Name'>
@@ -131,31 +129,38 @@
 					</ul>
 				</div>
 	    <div data-role='content'>
-	      <label for="select-choice-month">Month</label>
-	      <select name="select-choice-month" id="select-choice-month">
-	        <option>July</option>
-	        <option value="jan">January</option>
-	        <option value="feb">February</option>
-	        <option value="march">March</option>
-	        <option value="april">April</option>
-	        <option value="may">May</option>
-	        <option value="june">June</option>
-	        <option value="july">July</option>
-	        <option value="aug">August</option>
-	        <option value="sep">September</option>
-	        <option value="oct">October</option>
-	        <option value="nov">November</option>
-	        <option value="dec">December</option>
-	      </select>
-	      <label for="select-choice-year">Year</label>
-	      <select name="select-choice-year" id="select-choice-year">
-	        <option>2016</option>
-	        <option value="2012">2012</option>
-	        <option value="2013">2013</option>
-	        <option value="2014">2014</option>
-	        <option value="2015">2015</option>
-	        <option value="2016">2016</option>
-	      </select>
+				<script>
+				window.onload = init;
+				function init() {
+					document.months.mStr.options[new Date().getMonth()].selected = true;
+					document.years.yStr.options[new Date().getYear()].selected=true;
+				}
+				</script>
+				<form name="months" action="">
+				<select name="mStr">
+					<option value="0">January</option>
+					<option value="1">February</option>
+					<option value="2">March</option>
+					<option value="3">April</option>
+					<option value="4">May</option>
+					<option value="5">June</option>
+					<option value="6">July</option>
+					<option value="7">August</option>
+					<option value="8">September</option>
+					<option value="9">October</option>
+					<option value="10">November</option>
+					<option value="11">December</option>
+				</select>
+				</form>
+				<form name="years" action="">
+				<select name="yStr">
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+					<option value="2014">2014</option>
+					<option value="2013">2013</option>
+					<option value="2012">2012</option>
+				</select>
+				</form>
 	      <!--Script for Pie Chart-->
 	      <script type="text/javascript">
 	        google.charts.load('current', {'packages':['corechart']});
@@ -173,8 +178,8 @@
 
 	          var options = {
 	            title: 'My Categories (in dollars)',
-	            legend:{position: 'bottom'},
-	            chartArea:{left:6,top:6,width:"70px",height:"100px"}
+	            legend:{position: 'right'},
+	            chartArea:{height:'100%', width:'100%', top:'13%'}
 	          };
 
 	          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -484,7 +489,7 @@
   	<div  data-role="footer"></div>
    </div>
 
-<!--Overview-->
+  <!--Overview-->
   <div data-role="page" id="overview" data-theme="a" style="text-align:center;">
 
 	  <div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
@@ -504,40 +509,11 @@
 				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
 			</ul>
 		</div>
-		
 		<div data-role="content">
-			<div id="pigOverview" style="border:1px solid black;">
-				<div id="pigImage" style="float:left;">
-					<img src="wilbur.png">
-					<p>Wilbur</p>
-				</div>
-				
-				<div id="happinessBar" style="float:right;">
-					<p>Happiness bar</p>
-					<style>
-						#myProgress {
-						  position: relative;
-						  width: 100%;
-						  height: 30px;
-						  background-color: #ddd;
-						}
-
-						#myBar {
-						  position: absolute;
-						  width: 50%;
-						  height: 100%;
-						  background-color: #ffcc00;
-						}
-					</style>
-					<div id="myProgress">
-						<div id="myBar"></div>
-					</div>
-					<img src="dailytip.png">
-				</div>	
-			</div>
-		</div>		
-		
-		<div id="budgetOverview" style="border:1px solid black;"></div>
+			<h3>This is the content</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam [...].</p>
+		</div>
   </div>
 
 <!--Settings-->
