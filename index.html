@@ -488,8 +488,22 @@
 	</div>
   	<div  data-role="footer"></div>
    </div>
+   
+    <!--New Expense-->
+  <div data-role="page" id="newExpense">
+    <div data-role="content">
+      <h1>New Expense</h1>
+      <form id="expenseForm">
+       <input id="expenseName" type="text" placeholder="Expense Name">
+      </form>
+         <p>Amount:</p> $
+           <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
+            <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
 
-  <!--Overview-->
+    </div>
+  </div>
+
+ <!--Overview-->
   <div data-role="page" id="overview" data-theme="a" style="text-align:center;">
 
 	  <div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
@@ -509,11 +523,80 @@
 				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
 			</ul>
 		</div>
+		
 		<div data-role="content">
-			<h3>This is the content</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam [...].</p>
-		</div>
+			<div id="pigBudget" style="border:1px solid black;">
+				<div id="pigImage" style="float:left;" >
+					<img src="wilbur.png">
+					<p>Wilbur</p>
+				</div>
+				
+				<div id="happinessBar" style="float:right;" >
+					<p>Happiness bar</p>
+					<style>
+						#myProgress {
+						  position: relative;
+						  width: 100%;
+						  height: 30px;
+						  background-color: #ddd;
+						}
+
+						#myBar {
+						  position: absolute;
+						  width: 50%;
+						  height: 100%;
+						  background-color: #ffcc00;
+						}
+					</style>
+					<div id="myProgress">
+						<div id="myBar"></div>
+					</div>
+					<a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"><img src="dailytip.png"></a>
+					<div data-role="popup" id="popupDialog" data-dismissible="false" style="max-width:400px;">
+						<div data-role="header" data-theme="a">
+						<h1>Daily Tip</h1>
+						</div>
+						<div role="main" class="ui-content">
+							<p>To save money, earn more than you spend!</p>
+							<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Thanks!</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<div id="budgetOverview" style="border:1px solid black; margin-top: 30%;">
+			<div style='float:left;'>
+				<h2>Budget</h2>
+			</div>
+
+			<div style='float:right;'>
+				<p>July</p>
+			</div>
+			<p style="margin-top:5%">Spent $50 from $150</p>
+			<style>
+				#myProgressBudget {
+				  position: relative;
+				  width: 100%;
+				  height: 30px;
+				  background-color: #ddd;
+				}
+
+				#myBarBudget {
+				  position: absolute;
+				  width: 75%;
+				  height: 100%;
+				  background-color: #00ff00;
+				}
+			</style>
+			<div id="myProgressBudget">
+				<div id="myBarBudget"></div>
+			</div>
+		</div>	
+		
+		<div style="float: left;"><a href="#newExpense"><img style="width: 100px; height: 100px;" src="addexpenses.png"></a></div>
+		<div style="float: right;"><a href="#newGoal"><img style="width: 100px; height: 100px;" src="newsavings.png"></a></div>
+		
+		</div>		
   </div>
 
 <!--Settings-->
@@ -549,20 +632,6 @@
       </form>
     </div>
     <div/>
-  </div>
-
-  <!--New Expense-->
-  <div data-role="page" id="newExpense">
-    <div data-role="content">
-      <h1>New Expense</h1>
-      <form id="expenseForm">
-       <input id="expenseName" type="text" placeholder="Expense Name">
-      </form>
-         <p>Amount:</p> $
-           <input type="number" name="quantity" min="0" max="" style='width:60px;' /> .
-            <input type="number" name="quantity" min="0" max="99" style='width:33px;' />
-
-    </div>
   </div>
 
 </body>
