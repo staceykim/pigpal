@@ -1,4 +1,3 @@
-
 #email,
 #password,
 #newEmail,
@@ -47,4 +46,85 @@
 #updateSettings,
 #signOut {
   width: 150px;
+}
+
+.open a, .open a:hover {
+  padding: 7px 15px;
+  background-color: #000;
+  border-radius: 3px;
+}
+.open { 
+  color: #fff;
+  position: absolute;
+}
+.open.left {
+  left: 20px;
+  cursor: pointer;
+}
+.panel {
+  background: #7F8C8D;
+  color: #ECF0F1;
+}
+.panel a {
+  color: #000 !important;
+  font-size: 14px;
+  padding: 15px 20px 15px 60px;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid #475657;
+  border-top: 1px solid #95A5A6;
+  position: relative;
+  font-weight: 400;
+}
+
+.panel ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid #95A5A6;
+}
+
+.panel .avatar {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+.ui-panel-inner {
+  padding: 0;
+}
+.panel a:hover {
+  background-color: #95A5A6;
+}
+.panel.left a:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 15px;
+  left: 20px;
+  font-family: 'hk-demo';
+  text-align: center;
+  font-size: 18px;
+}
+.panel.left .overviewNav a:before { 
+  content: url("home.png");
+}
+.panel.left .pigNameNav a:before { 
+  content: url("pig.png");
+}
+.panel.left .budgetNav a:before { 
+  content: url("money.png");
+}
+.panel.left .totalSpendingNav a:before { 
+  content: url("chart.png");
+}
+.panel.left .savingsGoalNav a:before { 
+  content: url("dollar.png");
+}
+.panel.left .badgesNav a:before { 
+  content: url("badges.png");
+}
+.panel.left .settingsNav a:before { 
+  content: url("settings.png");
 }

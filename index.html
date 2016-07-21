@@ -7,14 +7,14 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no" >
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="script.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!--for pie chart-->
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<script src="script.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!--for pie chart-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 </header>
 
 <body>
-
   <!--Login-->
   <div data-role="page" style='text-align:center;' id='login'>
     <div data-role="content">
@@ -112,10 +112,25 @@
   <!--/Get Started page-->
 
   <div data-role='page' id='totalSpending' style='text-align:center;'>
-    <div data-role='header'>
-      <!--Insert hamburger icon here-->
-      <h1>Total Spending</h1>
-    </div>
+    
+	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
+			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
+            <span class="title"><h2>Total Spending</h2></span>
+		</div>
+	  
+	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
+			<ul>
+				<li><h3>Charlotte<h3></li>
+				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
+				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
+				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
+				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
+				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
+				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
+				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
+			</ul>
+		</div>
+	
     <div data-role='content'>
       <label for="select-choice-month">Month</label>
       <select name="select-choice-month" id="select-choice-month">
@@ -177,10 +192,25 @@
   <!--/Total Spending page-->
 
   <div data-role='page' id='badges' style='text-align:center;'>
-    <div data-role='header'>
-      <!--insert Hamburger icon-->
-      <h1>Badges</h1>
-    </div>
+    
+	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
+			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
+            <span class="title"><h2>Badges</h2></span>
+		</div>
+	  
+	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
+			<ul>
+				<li><h3>Charlotte<h3></li>
+				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
+				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
+				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
+				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
+				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
+				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
+				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
+			</ul>
+		</div>
+	
     <div data-role='content'>
       <!--insert images, and maybe pop up of brief description-->
     </div>
@@ -227,7 +257,7 @@
   <!--/New Goal page-->
 
   <!--Starting Budget Page-->
-  <div data-role="page" id="startingBudget" style='text-align:center;'>
+  <div data-role="page" id="startingBudget" style='text-align:center;'> 
     <div data-role="content">
       <h1>Starting Budget</h1>
       <p>Amount in Bank:</p>
@@ -268,17 +298,108 @@
       <input type="submit" value="Submit">
     </div>
   </div>
+  
+    <!--Pig Page-->
+  <div  data-role="page" id="pig" style='text-align:center;'>
+  	
+	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
+			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
+            <span class="title"><h2>Wilbur</h2></span>
+		</div>
+	  
+	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
+			<ul>
+				<li><h3>Charlotte<h3></li>
+				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
+				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
+				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
+				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
+				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
+				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
+				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
+			</ul>
+		</div>
+	
+  	<div  data-role="content">
+		<h3>Pig Page</h3>
+	</div>
+  	<div  data-role="footer"></div>
+   </div>
+   
+  <!--Budget Page-->
+  <div  data-role="page" id="budget" style='text-align:center;'>
+  	<div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
+			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
+            <span class="title"><h2>Budget</h2></span>
+		</div>
+	  
+	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
+			<ul>
+				<li><h3>Charlotte<h3></li>
+				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
+				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
+				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
+				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
+				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
+				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
+				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
+			</ul>
+		</div>
+  	<div  data-role="content">
+		<h3>Budget Page</h3>
+	</div>
+  	<div  data-role="footer"></div>
+   </div>
 
   <!--Overview-->
-  <div data-role="page" id="overview">
-    <div data-role="content">...</div>
+  <div data-role="page" id="overview" data-theme="a" style="text-align:center;">
+
+	  <div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
+			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
+            <span class="title"><h2>Overview</h2></span>
+		</div>
+	  
+	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
+			<ul>
+				<li><h3>Charlotte<h3></li>
+				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
+				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
+				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
+				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
+				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
+				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
+				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
+			</ul>
+		</div>
+		<div data-role="content">
+			<h3>This is the content</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam [...].</p>
+		</div>
   </div>
 
   <!--Settings-->
   <div data-role="page" id="settings" style='text-align:center;'>
+  
+  <div class="header ui-header ui-bar-a" data-role="header" style="margin-top: 0px; margin-bottom: 5%;" role="banner" id="navBanner">
+			<a class="open left" href="#panel-01"><img src="hamburger.png" style="height: 40px; width:40px;"></a>
+            <span class="title"><h2>Settings</h2></span>
+		</div>
+	  
+	  <div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel-01">
+			<ul>
+				<li><h3>Charlotte<h3></li>
+				<li class="overviewNav"><a href="#overview" title="overviewNav">Overview</a></li>
+				<li class="pigNameNav"><a href="#pig" title="pigNameNav">Pig Name</a></li>
+				<li class="budgetNav"><a href="#budget" title="budgetNav">Budget</a></li>
+				<li class="totalSpendingNav"><a href="#totalSpending" title="totalSpendingNav">Total Spending</a></li>
+				<li class="savingsGoalNav"><a href="#savingsGoals" title="savingsGoalNav">Savings Goal</a></li>
+				<li class="badgesNav"><a href="#badges" title="badgesNav">Badges</a></li>
+				<li class="settingsNav"><a href="#settings" title="settingsNav">Settings</a></li>
+			</ul>
+		</div>
+  
     <div data-role="content">
-      <h1>Settings</h1>
-
       <form id="settingsForm" style="margin-left: 75px;">
         <input id="email" type="text" placeholder="Email">
         <input id="password" type="text" placeholder="Password">
