@@ -1,2 +1,3 @@
 # pigpal
-#yeaaaah
+cs.wellesley.edu/~pigpal
+cs.welleley.edu/~pigpal/add
